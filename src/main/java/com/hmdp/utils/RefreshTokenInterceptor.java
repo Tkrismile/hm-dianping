@@ -28,7 +28,7 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
 
         // 判断token是否存在
         if  (StringUtils.isBlank(token)) {
-            response.setStatus(401);
+            // response.setStatus(401);
             // 不需要做拦截
             // return false;
             return true;
@@ -38,7 +38,7 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
         Map<Object, Object> userMap = stringRedisTemplate.opsForHash().entries(key);
         // 判断用户是否存在
         if  (userMap.isEmpty()) {
-            response.setStatus(401);
+            // response.setStatus(401);
             // 不需要做拦截
             // return false;
             return true;
